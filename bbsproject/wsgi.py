@@ -13,7 +13,7 @@ from django.core.wsgi import get_wsgi_application
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'bbsproject.settings')
 
-
+import django
 # 追加
 # Django を初期化してコマンドを実行可能にする
 django.setup()
