@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 import environ
-from decouple import bbsproject
+from decouple import config
 from dj_database_url import parse as dburl
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -44,9 +44,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'bbs.apps.BbsBbsproject',
+    'bbs.apps.BbsConfig',
     'django_bootstrap5',
-    'accounts.apps.AccountsBbsproject',
+    'accounts.apps.AccountsConfig',
 ]
 
 MIDDLEWARE = [
@@ -89,7 +89,7 @@ WSGI_APPLICATION = 'bbsproject.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': bbsproject("DATABASE_URL", default=default_dburl, cast=dburl),
+    'default': config("DATABASE_URL", default=default_dburl, cast=dburl),
 }
 
 
